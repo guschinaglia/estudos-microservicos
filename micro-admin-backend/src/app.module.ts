@@ -1,3 +1,5 @@
+import { AppService } from './app.service';
+import { AppController } from './app.controller';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CategoriaSchema } from './interfaces/categorias/categoria.schema';
@@ -16,7 +18,7 @@ import { JogadorSchema } from './interfaces/jogadores/jogador.schema';
       { name: 'Jogador', schema: JogadorSchema },
     ]),
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
